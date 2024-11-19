@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main" id="main">
+      <div class="form-body">
+        <div class="row-box">
+          <form action="/" class="form" onSubmit="submitData(event)">
+          <H1>Find your Batch</H1>
+          <div class="user-div">
+            <p class="uid">Student ID</p>
+            <input type="text" id="username" oninput="inputValid(event)" placeholder="Enter your ID Number" required>
+            <span class="error"></span>
+          </div>
+          <div class="pw-div">
+            <p class="roll">Roll Number</p>
+            <input id="password" type="password" placeholder="Enter Your Roll Number" required />
+            <span class="error"></span>
+          </div>
+          <button type="submit" class="btn">Sign in</button>
+        </form>
+        <div class="code-box">
+          <h5>or sign in with QR</h5>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-1.jpg" class="img" alt="ID code">
+          </div>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-2.jpg" class="img" alt="ID code">
+          </div>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-3.jpg" class="img" alt="ID code">
+          </div>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-4.jpg" class="img" alt="ID code">
+          </div>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-5.jpg" class="img" alt="ID code">
+          </div>
+          <div class="cd-img-code">
+            <img src="./Assets/QR code/image-6.jpg" class="img" alt="ID code">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
