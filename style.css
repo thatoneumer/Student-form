@@ -141,3 +141,10 @@ h1
   display: none;
 }
 
+@media screen and (max-width: 429px) {
+
+  .code-box{
+    display: none;
+  }
+  
+}
