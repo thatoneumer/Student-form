@@ -1,75 +1,65 @@
-usersData = false;
+var usersData = [
+  {
+    name: "Umer Mehmood",
+    username: "WMA25050",
+    password: "33578",
+  },
+  {
+    name: "Raza Usman",
+    username: "WMA25051",
+    password: "55872",
+  },
+];
+
 function userValid(error) {
   if (error.target.value.length < 7) {
     error.target.nextElementSibling.innerText = "atleast 5 char required";
-    error.target.nextElementSibling.style.display = "block"
+    error.target.nextElementSibling.style.display = "block";
     return;
   }
 
   error.target.nextElementSibling.style.display = "none";
-  usersData = true;
 }
 
-function userpwValid(error){
-    if(error.target.value.length < 5){
-        error.target.nextElementSibling.innerText = "Atleast 8 char required";
-        error.target.nextElementSibling.style.display = "block";
-        return;
-    }
+function userpwValid(error) {
+  if (error.target.value.length < 5) {
+    error.target.nextElementSibling.innerText = "Atleast 8 char required";
+    error.target.nextElementSibling.style.display = "block";
+    return;
+  }
 
-    if (error.target.value.length <= 0)
-    {
-        error.target.nextElementSibling.style.display = "block";
-        error.target.nextElementSibling.innerText = "Please Input this field";
-        return
-    }
-    error.target.nextElementSibling.style.display = "none";
-    usersData = true;
+  if (error.target.value.length <= 0) {
+    error.target.nextElementSibling.style.display = "block";
+    error.target.nextElementSibling.innerText = "Please Input this field";
+    return;
+  }
+  error.target.nextElementSibling.style.display = "none";
 }
 
 function submitData(e) {
   e.preventDefault();
-  var username = document.getElementById("username");
-  var password = document.getElementById("password");
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
   var error = document.getElementsByClassName("error");
-   
-  if (!usersData) return;
 
-  // usersData.push({
-  //   username: username.value,
-  //   password: password.value,
-  // })
-  var i = 0;
-  while (i < usersData.length) {
-    if (usersData[i].username === username.value) {
-      alert("username already exist!");
+  for (var i = 0; i < usersData.length; i++) {
+    if (
+      username === usersData[i].username &&
+      password === usersData[i].password
+    ) {
+      document.getElementById(
+        "h1"
+      ).innerText = `Welcome back ${usersData[i].name}`;
+      document.getElementsByClassName("student-modal")[0].style.display = "flex";
+      document.getElementsByClassName("form-body")[0].style.display = "none";
       return;
+    } else {
+      document.getElementById("h1").innerText = "Student Doesn't Exist";
+      document.getElementsByClassName("student-modal")[0].style.display =
+        "flex";
+      document.getElementById('ah').style.display = "none"  
     }
-    i++;
   }
-
-  usersData = [
-    ...usersData,
-    {
-      // 2nd method with spread operator
-      username: username.value,
-      password: password.value,
-    },
-  ];
-
-  console.log(usersData);
-
-  username.value = ""; // to empty input
-  password.value = "";
 }
 
-var usersData = [
-  {
-    username: "abc1",
-    password: "1234567890",
-  },
-  {
-    username: "abc2",
-    password: "1234567890354",
-  },
-];
+console.log(usersData);

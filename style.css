@@ -136,3 +136,8 @@ h1
   background-color: #1997ffce;
 }
 
+.student-modal
+{
+  display: none;
+}
+
