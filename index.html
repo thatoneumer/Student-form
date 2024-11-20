@@ -10,16 +10,16 @@
     <div class="main" id="main">
       <div class="form-body">
         <div class="row-box">
-          <form action="/" class="form" onSubmit="submitData(event)">
+          <form action="" class="form" onSubmit="submitData(event)">
           <H1>Find your Batch</H1>
           <div class="user-div">
             <p class="uid">Student ID</p>
-            <input type="text" id="username" oninput="inputValid(event)" placeholder="Enter your ID Number" required>
+            <input type="text" id="username" oninput="userValid(event)" placeholder="Enter your ID Number" required/>
             <span class="error"></span>
           </div>
           <div class="pw-div">
             <p class="roll">Roll Number</p>
-            <input id="password" type="password" placeholder="Enter Your Roll Number" required />
+            <input id="password" type="password" oninput="userpwValid(event)" placeholder="Enter Your Roll Number" required/>
             <span class="error"></span>
           </div>
           <button type="submit" class="btn">Sign in</button>
@@ -49,5 +49,6 @@
       </div>
     </div>
     <script src="./app.js"></script>
+    <script src="./imagechanger.js"></script>
   </body>
 </html>

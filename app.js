@@ -1,26 +1,44 @@
-var usernameData = false;
-function inputValid(e) {
-  if (e.target.value.length < 3) {
-    console.log(e.target.nextElementSibling);
-    e.target.nextElementSibling.innerText = "atleast 3 character required";
-    e.target.nextElementSibling.style.display = "block";
+usersData = false;
+function userValid(error) {
+  if (error.target.value.length < 7) {
+    error.target.nextElementSibling.innerText = "atleast 5 char required";
+    error.target.nextElementSibling.style.display = "block"
     return;
   }
-  e.target.nextElementSibling.style.display = "none";
-  usernameData = true;
+
+  error.target.nextElementSibling.style.display = "none";
+  usersData = true;
+}
+
+function userpwValid(error){
+    if(error.target.value.length < 5){
+        error.target.nextElementSibling.innerText = "Atleast 8 char required";
+        error.target.nextElementSibling.style.display = "block";
+        return;
+    }
+
+    if (error.target.value.length <= 0)
+    {
+        error.target.nextElementSibling.style.display = "block";
+        error.target.nextElementSibling.innerText = "Please Input this field";
+        return
+    }
+    error.target.nextElementSibling.style.display = "none";
+    usersData = true;
 }
 
 function submitData(e) {
   e.preventDefault();
   var username = document.getElementById("username");
   var password = document.getElementById("password");
-  if (password.value.length < 11) {
-    password.nextElementSibling.innerText = "Roll Number doesn't exist";
-    return;
-  }
-  password.nextElementSibling.style.display = "none";
-  if (!usernameData) return;
+  var error = document.getElementsByClassName("error");
+   
+  if (!usersData) return;
 
+  // usersData.push({
+  //   username: username.value,
+  //   password: password.value,
+  // })
   var i = 0;
   while (i < usersData.length) {
     if (usersData[i].username === username.value) {
@@ -29,41 +47,29 @@ function submitData(e) {
     }
     i++;
   }
+
   usersData = [
     ...usersData,
     {
+      // 2nd method with spread operator
       username: username.value,
       password: password.value,
     },
   ];
 
-  username.value = "";
+  console.log(usersData);
+
+  username.value = ""; // to empty input
   password.value = "";
-  usernameData = false;
 }
+
 var usersData = [
   {
-    username: "umercrusher55",
-    password: "55667799",
+    username: "abc1",
+    password: "1234567890",
   },
   {
-    username: "razausman",
-    password: "52kk341",
+    username: "abc2",
+    password: "1234567890354",
   },
 ];
-
-var slideIndex = 0;
-function showSlides() {
-  let slides = document.getElementsByClassName("cd-img-code");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 5000);
-}
-showSlides();
-
