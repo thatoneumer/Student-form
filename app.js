@@ -1,13 +1,19 @@
 var usersData = [
   {
-    name: "Umer Mehmood",
+    fname: "Umer",
+    lname: "Mehmood",
+    name:  "Umer Mehmood",
     username: "WMA25050",
     password: "33578",
+    batch: "Web Designer",
   },
   {
+    fname: "Raza",
+    lname: "Usman",
     name: "Raza Usman",
     username: "WMA25051",
     password: "55872",
+    batch: "Web Developer",
   },
 ];
 
@@ -49,15 +55,22 @@ function submitData(e) {
     ) {
       document.getElementById(
         "h1"
-      ).innerText = `Welcome back ${usersData[i].name}`;
-      document.getElementsByClassName("student-modal")[0].style.display = "flex";
+      ).innerText = `Welcome back ${usersData[i].fname}`;
+      document.getElementById("name").innerText = usersData[i].name;
+      document.getElementById("rolln").innerText = usersData[i].password;
+      document.getElementById("batch").innerText = usersData[i].batch;
+
+      document.getElementsByClassName("student-modal")[0].style.display =
+        "flex";
+
       document.getElementsByClassName("form-body")[0].style.display = "none";
       return;
     } else {
       document.getElementById("h1").innerText = "Student Doesn't Exist";
       document.getElementsByClassName("student-modal")[0].style.display =
         "flex";
-      document.getElementById('ah').style.display = "none"  
+      document.getElementsByClassName("data")[0].style.display = "none";
+      document.getElementById("ah").style.display = "none";
     }
   }
 }

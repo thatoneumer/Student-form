@@ -11,48 +11,99 @@
       <div class="form-body">
         <div class="row-box">
           <form action="" class="form" onSubmit="submitData(event)">
-          <H1>Find your Batch</H1>
-          <div class="user-div">
-            <p class="uid">Student ID</p>
-            <input type="text" id="username" oninput="userValid(event)" placeholder="Enter your ID Number" required/>
-            <span class="error"></span>
+            <h1 class="h1-form">Find your Batch</h1>
+            <div class="user-div">
+              <p class="uid">Student ID</p>
+              <input
+                type="text"
+                id="username"
+                oninput="userValid(event)"
+                placeholder="Enter your ID Number"
+                required
+              />
+              <span class="error"></span>
+            </div>
+            <div class="pw-div">
+              <p class="roll">Roll Number</p>
+              <input
+                id="password"
+                type="password"
+                oninput="userpwValid(event)"
+                placeholder="Enter Your Roll Number"
+                required
+              />
+              <span class="error"></span>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+          </form>
+          <div class="code-box">
+            <h5>or sign in with QR</h5>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-1.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-2.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-3.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-4.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-5.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
+            <div class="cd-img-code">
+              <img
+                src="./Assets/QR code/image-6.jpg"
+                class="img"
+                alt="ID code"
+              />
+            </div>
           </div>
-          <div class="pw-div">
-            <p class="roll">Roll Number</p>
-            <input id="password" type="password" oninput="userpwValid(event)" placeholder="Enter Your Roll Number" required/>
-            <span class="error"></span>
-          </div>
-          <button type="submit" class="btn">Sign in</button>
-        </form>
-        <div class="code-box">
-          <h5>or sign in with QR</h5>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-1.jpg" class="img" alt="ID code">
-          </div>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-2.jpg" class="img" alt="ID code">
-          </div>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-3.jpg" class="img" alt="ID code">
-          </div>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-4.jpg" class="img" alt="ID code">
-          </div>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-5.jpg" class="img" alt="ID code">
-          </div>
-          <div class="cd-img-code">
-            <img src="./Assets/QR code/image-6.jpg" class="img" alt="ID code">
-          </div>
-        </div>
         </div>
       </div>
       <div class="student-modal">
-        <a href="./index.html" id="ah"><button>Back</button></a>
-        <h1 id="h1"></h1>
+        <div class="cross-btn">
+          <a href="./index.html" id="ah"
+            ><i class="fa-solid fa-circle-xmark" style="color: #ffffff"></i
+          ></a>
+        </div>
+        <div class="modal">
+          <h1 id="h1"></h1>
+          <div class="data">
+            <h2 class="name">Name: <span id="name"></span></h2>
+            <h2 class="roll">Roll Number: <span id="rolln"></span></h2>
+            <h2 class="batch">Batch Name: <span id="batch"></span></h2>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./app.js"></script>
     <script src="./imagechanger.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6b8a196b8e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
